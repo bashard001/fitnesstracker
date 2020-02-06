@@ -27,6 +27,11 @@ function tallyExercises(exercises) {
     }
     return acc;
   }, {});
+
+  Object.keys(tallied).forEach(key => {
+    if(isNaN(tallied[key]))
+      tallied[key] = '0';
+  })
   return tallied;
 }
 

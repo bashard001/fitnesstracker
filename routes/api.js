@@ -11,6 +11,20 @@ router.post("/api/workouts", ({ body }, res) => {
     });
 });
 
+router.put("/api/workouts/:id", (req, res) => {
+ workout.update(
+    { _id: req.params.id },
+    { $push: {exercises: req.body}  }
+ )
+ .then(dbworkout => {
+  res.json({success: dbworkout});
+})
+.catch(err => {
+  res.status(400).json(err);
+});
+
+});
+
 router.post("/api/workout/range", ({ body }, res) => {
   workout.insertMany(body)
     .then(dbworkout => {
