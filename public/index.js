@@ -12,7 +12,8 @@ const distanceInput = document.querySelector("#distance");
 const completeButton = document.querySelector("button.complete");
 const addButton = document.querySelector("button.add-another");
 const toast = document.querySelector("#toast");
-const newWorkout = document.querySelector(".new-workout")
+const newWorkout = document.querySelector(".new-workout");
+const continuew = document.querySelector(".cworkout");
 
 let workoutType = null;
 let shouldNavigateAway = false;
@@ -148,6 +149,14 @@ if(completeButton) {
 if(addButton) {
   addButton.addEventListener("click", handleFormSubmit);
 }
+
+if (continuew){
+continuew.addEventListener("click", async () =>{
+  const res = await API.getWorkoutsInRange()
+  .then(console.log(res));
+  
+}
+)}
 toast.addEventListener("animationend", handleToastAnimationEnd);
 
 document

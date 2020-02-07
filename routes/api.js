@@ -25,14 +25,24 @@ router.put("/api/workouts/:id", (req, res) => {
 
 });
 
-router.post("/api/workout/range", ({ body }, res) => {
-  workout.insertMany(body)
-    .then(dbworkout => {
-      res.json(dbworkout);
-    })
-    .catch(err => {
-      res.status(400).json(err);
-    });
+router.get("/api/workouts/range", ({ body }, res) => {
+
+  workout.find()
+  .then(dbworkout => {
+    console.log(dbworkout)
+    res.json(dbworkout);
+  })
+  .catch(err => {
+    res.status(400).json(err);
+  });
+
+  // workout.insertMany(body)
+  //   .then(dbworkout => {
+  //     res.json(dbworkout);
+  //   })
+  //   .catch(err => {
+  //     res.status(400).json(err);
+  //   });
 });
 
 router.get("/api/workouts", (req, res) => {

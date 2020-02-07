@@ -13,8 +13,7 @@ async function init() {
     ...tallyExercises(lastWorkout.exercises)
   };
 
-  renderWorkoutSummary(workoutSummary);
-}
+  renderWorkoutSummary(workoutSummary)};
 
 function tallyExercises(exercises) {
   const tallied = exercises.reduce((acc, curr) => {
