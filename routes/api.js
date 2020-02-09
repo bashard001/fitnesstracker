@@ -13,7 +13,7 @@ router.post("/api/workouts", ({ body }, res) => {
 
 router.put("/api/workouts/:id", (req, res) => {
  workout.update(
-    { _id: heroku_vtp7kv56.user1 },
+    { _id: req.params.id },
     { $push: {exercises: req.body}  }
  )
  .then(dbworkout => {
