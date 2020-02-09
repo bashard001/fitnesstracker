@@ -4,7 +4,7 @@ async function init() {
 
   document
     .querySelector("a[href='/exercise?']")
-    .setAttribute("href", `/exercise?id=heroku_vtp7kv56.user1`);
+    .setAttribute("href", `/exercise?id=${lastWorkout._id}`);
 
   const workoutSummary = {
     date: formatDate(lastWorkout.day),
