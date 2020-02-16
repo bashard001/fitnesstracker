@@ -18,19 +18,19 @@ const continuew = document.querySelector(".cworkout");
 let workoutType = null;
 let shouldNavigateAway = false;
 
-// init();
+init();
 
-// async function init() {
-//   if (location.search.split("=")[1] === undefined) {
-//     const workout = await API.getLastWorkout();
-//     if(workout) {
-//       location.search = "?id=" + workout._id;
-//     }
-//     else {
-//       newWorkout.classList.add("")
-//     }
-//   }
-// }
+async function init() {
+  if (location.search.split("=")[1] === undefined) {
+    const workout = await API.getLastWorkout();
+    if(workout) {
+      location.search = "?id=" + workout._id;
+    }
+    else {
+      newWorkout.classList.add("")
+    }
+  }
+}
 
 function handleWorkoutTypeChange(event) {
   workoutType = event.target.value;
