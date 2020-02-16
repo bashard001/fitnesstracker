@@ -114,7 +114,7 @@ async function handleFormSubmit(event) {
     workoutData.duration = Number(resistanceDurationInput.value.trim());
   }
 
-  await API.addExercise(workoutData);
+  await location.search.split("=")[1] === undefined ?  API.createWorkout(workoutData) : API.addExercises(workoutData);
   clearInputs();
   toast.classList.add("success");
 }
