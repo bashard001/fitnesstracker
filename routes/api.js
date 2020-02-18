@@ -26,11 +26,11 @@ router.put("/api/workouts/:id", (req, res) => {
 
 });
 
-router.get("/api/workouts/range", ({ body }, res) => {
+router.get("/api/workouts/exercise", ({ body }, res) => {
 
   workout.find()
   .then(dbworkout => {
-    console.log(dbworkout)
+    console.log(res.json(dbworkout))
     res.json(dbworkout);
   })
   .catch(err => {

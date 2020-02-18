@@ -153,7 +153,7 @@ if(addButton) {
 if (continuew){
 continuew.addEventListener("click", async () =>{
   const res = await API.getWorkoutsInRange()
-  .then(console.log(res));
+  console.log(res);
   
 }
 )}
